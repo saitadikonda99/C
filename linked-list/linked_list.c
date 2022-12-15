@@ -7,7 +7,7 @@
 	struct node *root = NULL;
 	
     	void append() {
-		struct node *temp=root;
+		struct node *temp;
 		temp = ( struct node* )malloc( sizeof( struct node ) );
 		printf("enter the data: ");
 		scanf("%d",&temp->data);
@@ -24,7 +24,7 @@
 }
 
  	void insert_begin () {
-	 	struct node *temp=root;
+	 	struct node *temp;
 		temp = ( struct node* )malloc( sizeof(struct node) );
 		printf( " enter the data: ");
 		scanf("%d",&temp->data );
@@ -48,7 +48,7 @@
 		}
 	
 	void insert_pos() {
-		 struct node *temp = root;
+		 struct node *temp;
 		 int pos,len;
 		 printf("enter the position to insert : ");
 		 scanf("%d" , &pos);
@@ -71,7 +71,7 @@
 }
 
   void delete_begin() {
-		struct node *temp=root;
+		struct node *temp;
 		if ( root == NULL ) 
 		   printf(" Empty\n");
 			else {
@@ -122,7 +122,7 @@ void display() {
 		printf(" Empty\n");
                 else {
 	   		while ( temp != NULL ) { 
-			printf("%d ",temp->data);
+			printf("%d --> ",temp->data);
 			temp = temp->link;
 
 }  
@@ -142,10 +142,10 @@ int main() {
                 printf(" 4.delete at begin \n" );
                 printf(" 5.delete at position\n" );
                 printf(" 6.delete at end\n" );
-                printf(" 7.display\n" );
-		//printf(" 8.length\n");
+		printf(" 7.length of the linked list\n");	
+                printf(" 8.display\n" );
 		printf(" 0.exit\n"); 
-		 int ch;
+		 int ch,length;
 	         printf("---- enter your choice ---- : \n");
 		 scanf("%d",&ch);
  	 switch( ch ) {
@@ -163,10 +163,12 @@ int main() {
                                  break;
                         case 6 : delete_last();
                                  break;
-                        case 7 : display();
+                        case 7 : length = length_linked();
+				 printf("length of the liked list :%d\n",length);
                                  break;
-                        //case 8 : length_linked();
-                          //       break;
+                        case 8 : display();
+                                 break;
+
 		       default : printf(" ----choose from 0  -  8 ---- \n ");
 		
 }
