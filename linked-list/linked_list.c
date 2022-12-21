@@ -55,6 +55,7 @@
 		 len = length_linked();
 	if( pos > len ) 
   		printf(" position is greater than length\n");
+		printf("\n");
 		else {
 		      struct node *p = root ;
 		      int i=1;
@@ -104,6 +105,7 @@ void delete_last() {
 	  struct node*p=root, *q;
 	  if( root == NULL )
 	   	printf(" Empty\n");
+		printf("\n");
 	        else {
 			int i=1;
 			int len = length_linked();
@@ -127,10 +129,10 @@ void display() {
 
 }  
 			printf("\n");
+			printf("\n");
 
-			}	
-		}
-
+				}
+}
 	void reverse() {
 	          struct node *p, *q;
 		  int len = length_linked();
@@ -154,21 +156,33 @@ void display() {
 	
 }				
 	void sum() {
-		struct node *temp =root;
+		struct node *temp = root;
 		int sum = 0;
 		while( temp != NULL )	{
 			sum += temp->data;
 			temp =temp->link;
 			}
-		printf("sum of the linked list : %d\n ",sum);
+		printf("sum of all nodes : %d\n ",sum);
+		printf("\n");
 		}
-	
+
+	void product() {
+		struct node *temp = root;
+		int product = 1;
+		    while( temp != NULL ) {
+			product *=temp->data;
+			temp = temp->link;
+			}
+		printf("product of all nodes : %d\n " ,product );	
+		printf("\n");		
+	}
 		
 int main() {
 	  
           printf( " --------- LINKED LIST ---------\n " );
    	  while( 1 ) {
-
+		printf("\n");
+		printf("\n");
   		printf(" 1.append\n");
 		printf(" 2.insert at begin\n" );
                 printf(" 3.insert at position \n" );
@@ -178,8 +192,11 @@ int main() {
 		printf(" 7.length of the linked list\n");	
                 printf(" 8.display\n" );
 		printf(" 9.reverse the linked list\n");
-		printf(" 10.sum of nodes\n");
-		printf(" 0.exit\n"); 
+		printf(" 10.sum of all nodes\n");
+		printf(" 11.product of all nodes\n");
+		printf(" 0.exit\n");
+		printf("\n");
+		printf("\n");
 		 int ch,length;
 	         printf("---- enter your choice ---- : \n");
 		 scanf("%d",&ch);
@@ -207,7 +224,9 @@ int main() {
 				  break;
 			case 10 : sum();
 				  break;
-		       default : printf(" ----choose from 0  -  8 ---- \n ");
+			case 11 : product();
+				  break;
+		       default : printf(" ----choose from 0  -  10 ---- \n ");
 		
 }
         }
