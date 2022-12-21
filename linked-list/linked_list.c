@@ -131,6 +131,39 @@ void display() {
 			}	
 		}
 
+	void reverse() {
+	          struct node *p, *q;
+		  int len = length_linked();
+		   int  k = 0;
+		   int  s = len -1;
+		   p = q = root;
+		    while( k < s ) {
+			 int t = 0;
+			while( t < s ) {
+				q = q->link;
+				t++;
+				}
+			int temp = p->data;
+			p->data = q->data;
+			q->data = temp;
+			k++;
+			s--;
+			p = p->link;
+			q = root;
+			}
+	
+}				
+	void sum() {
+		struct node *temp =root;
+		int sum = 0;
+		while( temp != NULL )	{
+			sum += temp->data;
+			temp =temp->link;
+			}
+		printf("sum of the linked list : %d\n ",sum);
+		}
+	
+		
 int main() {
 	  
           printf( " --------- LINKED LIST ---------\n " );
@@ -144,31 +177,36 @@ int main() {
                 printf(" 6.delete at end\n" );
 		printf(" 7.length of the linked list\n");	
                 printf(" 8.display\n" );
+		printf(" 9.reverse the linked list\n");
+		printf(" 10.sum of nodes\n");
 		printf(" 0.exit\n"); 
 		 int ch,length;
 	         printf("---- enter your choice ---- : \n");
 		 scanf("%d",&ch);
  	 switch( ch ) {
 			
-                        case 0 : exit(0);
-   			case 1 : append();
-				 break;
-                        case 2 : insert_begin();
-                                 break;
-                        case 3 : insert_pos();
-                                 break;
-                        case 4 : delete_begin();
-                                 break;
-                        case 5 : delete_pos();
-                                 break;
-                        case 6 : delete_last();
-                                 break;
-                        case 7 : length = length_linked();
-				 printf("length of the liked list :%d\n",length);
-                                 break;
-                        case 8 : display();
-                                 break;
-
+                        case 0  : exit(0);
+   			case 1  : append();
+				  break;
+                        case 2  : insert_begin();
+                                  break;
+                        case 3  : insert_pos();
+                                  break;
+                        case 4  : delete_begin();
+                                  break;
+                        case 5  : delete_pos();
+                                  break;
+                        case 6  : delete_last();
+                                  break;
+                        case 7  : length = length_linked();
+				  printf("length of the liked list :%d\n",length);
+                                  break;
+                        case 8  : display();
+                                  break;
+			case 9  : reverse();
+				  break;
+			case 10 : sum();
+				  break;
 		       default : printf(" ----choose from 0  -  8 ---- \n ");
 		
 }
