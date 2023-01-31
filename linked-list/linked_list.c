@@ -55,7 +55,6 @@
 		 len = length_linked();
 	if( pos > len ) 
   		printf(" position is greater than length\n");
-		printf("\n");
 		else {
 		      struct node *p = root ;
 		      int i=1;
@@ -91,7 +90,7 @@
 		printf( " enter the valid position\n");
 	    else{
 		int i=1;
-		while( i < pos-1 ) {
+		while( i < pos ) {
 			p = p->link;
 			i++;
 			}
@@ -105,7 +104,6 @@ void delete_last() {
 	  struct node*p=root, *q;
 	  if( root == NULL )
 	   	printf(" Empty\n");
-		printf("\n");
 	        else {
 			int i=1;
 			int len = length_linked();
